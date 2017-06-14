@@ -1,3 +1,155 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <h1>PIPES</h1>
+  <hr>
+
+  <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">PIPES TABLE</div>
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Variable</th>
+        <th>Pipe</th>
+        <th>Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{nombre}}</td>
+        <td>uppercase</td>
+        <td>{{nombre | uppercase}}</td>
+      </tr>
+
+      <tr>
+        <td>{{nombre}}</td>
+        <td>lowercase</td>
+        <td>{{nombre | lowercase}}</td>
+      </tr>
+
+      <tr>
+        <td>{{nombre}}</td>
+        <td>slice:3 Corta las primeras 3 letras</td>
+        <td>{{nombre | slice:3}}</td>
+      </tr>
+
+      <tr>
+        <td>{{nombre}}</td>
+        <td>slice:0:3 Corta de 0 a 3</td>
+        <td>{{nombre | slice:0:3}}</td>
+      </tr>
+
+      <tr>
+        <td>{{arreglo}}</td>
+        <td>slice:1:4 Arreglos</td>
+        <td>{{arreglo | slice:1:4}}</td>
+      </tr>
+
+      <tr>
+        <td>{{PI}}</td>
+        <td>number: '3.0-0'</td>
+        <td>{{PI | number:'3.0-0'}}</td>
+      </tr>
+
+      <tr>
+        <td>{{PI}}</td>
+        <td>number: '1.0-2'</td>
+        <td>{{PI | number:'1.0-2'}}</td>
+      </tr>
+
+      <tr>
+        <td>{{a}}</td>
+        <td>percent multipilca *100</td>
+        <td>{{a | percent}}</td>
+      </tr>
+
+      <tr>
+        <td>{{a}}</td>
+        <td>percent:2.2-2'</td>
+        <td>{{a | percent:'2.2-2'}}</td>
+      </tr>
+
+      <tr>
+        <td>{{salario}}</td>
+        <td>currency</td>
+        <td>{{salario | currency}}</td>
+      </tr>
+
+      <tr>
+        <td>{{salario}}</td>
+        <td>currency;MXN</td>
+        <td>{{salario | currency:'MXN'}}</td>
+      </tr>
+
+      <tr>
+        <td>{{salario}}</td>
+        <td>currency:MXN:true</td>
+        <td>{{salario | currency:'MXN':true}}</td>
+      </tr>
+
+      <tr>
+        <td>{{salario}}</td>
+        <td>currency:MXN:true:4.0-0</td>
+        <td>{{salario | currency:'MXN':true:'4.0-0'}}</td>
+      </tr>
+
+      <tr>
+        <td>{{salario}}</td>
+        <td>number:'.2-2'</td>
+        <td>{{salario | number:'.2-2'}}</td>
+      </tr>
+
+      <tr>
+        <td>{{valorDePromesa}}</td>
+        <td>async</td>
+        <td>{{valorDePromesa}}</td>
+      </tr>
+
+      <tr>
+        <td>{{valorDePromesa}}</td>
+        <td>async</td>
+        <td>{{valorDePromesa | async}}</td>
+      </tr>
+
+      <tr>
+        <td>{{fecha}}</td>
+        <td>date</td>
+        <td>{{fecha | date}}</td>
+      </tr>
+
+      <tr>
+        <td>{{fecha}}</td>
+        <td>date:medium</td>
+        <td>{{fecha | date:'medium'}}</td>
+      </tr>
+
+      <tr>
+        <td>{{fecha}}</td>
+        <td>date:MMM - dd</td>
+        <td>{{fecha | date:'MMM - dd'}}</td>
+      </tr>
+
+
+
+
+    </tbody>
+  </table>
+
+  <h4>Slice</h4>
+  <ul>
+    <li *ngFor="let item of arreglo | slice:6:20">{{item}}</li>
+  </ul>
+
+  <h4>JSON</h4>
+  {{heroe}}
+  <hr>
+  <h4>JSON</h4>
+  {{heroe | json}}
+  <hr>
+  <h4>JSON</h4>
+  <pre>
+    {{heroe | json}}
+  </pre>
+
+</div>
+</div>
